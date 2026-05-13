@@ -8,18 +8,21 @@ const WaysInSection: React.FC = () => {
       image: '/assets/ways-in/run.webp',
       buttonText: 'REGISTER TO RUN',
       tag: '31 MAY',
+      href: 'https://www.ticket360.co.in/event-details?event=NzAwfF58',
     },
     {
       title: 'Sponsor',
       description: 'Move beyond visibility—be part of real impact.',
       image: '/assets/ways-in/sponsor.webp',
       buttonText: 'EXPLORE SPONSORSHIP',
+      href: '#sponsors',
     },
     {
       title: 'Partner',
       description: 'Bring your network, your company, your community.',
       image: '/assets/ways-in/partner.webp',
       buttonText: 'PARTNER WITH US',
+      href: 'https://www.ticket360.co.in/event-details?event=NzAwfF58',
     },
   ];
 
@@ -58,9 +61,20 @@ const WaysInSection: React.FC = () => {
                 
                 {/* Button */}
                 <div className="pt-4 mt-auto">
-                  <button className="bg-[#c6ff00] hover:bg-black hover:text-white text-black px-8 py-3 rounded-lg text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 shadow-sm hover:shadow-md transform active:scale-95 cursor-pointer">
-                    {card.buttonText}
-                  </button>
+                  {card.href ? (
+                    <a 
+                      href={card.href}
+                      target={card.href.startsWith('http') ? "_blank" : undefined}
+                      rel={card.href.startsWith('http') ? "noopener noreferrer" : undefined}
+                      className="bg-[#c6ff00] hover:bg-black hover:text-white text-black px-8 py-3 rounded-lg text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 shadow-sm hover:shadow-md transform active:scale-95 cursor-pointer inline-block text-center"
+                    >
+                      {card.buttonText}
+                    </a>
+                  ) : (
+                    <button className="bg-[#c6ff00] hover:bg-black hover:text-white text-black px-8 py-3 rounded-lg text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 shadow-sm hover:shadow-md transform active:scale-95 cursor-pointer">
+                      {card.buttonText}
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

@@ -33,8 +33,8 @@ const SpeechSection: React.FC = () => {
               {/* Identity */}
               <div className="flex items-center gap-4 pl-8 border-l-2 border-[#c6ff00]">
                 <div className="flex flex-col">
-                  <span className="text-white text-xl font-black uppercase tracking-tighter">Rithvik</span>
-                  <span className="text-neutral-500 text-xs font-bold uppercase tracking-widest">Marathoner</span>
+                  {/* <span className="text-white text-xl font-black uppercase tracking-tighter">Rithvik</span> */}
+                  {/* <span className="text-neutral-500 text-xs font-bold uppercase tracking-widest">Marathoner</span> */}
                 </div>
               </div>
             </div>

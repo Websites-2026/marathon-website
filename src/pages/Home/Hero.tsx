@@ -33,12 +33,15 @@ const Hero: React.FC = () => {
           </div>
 
           <div className="flex flex-wrap gap-4 pt-4">
-            <button className="px-10 py-4 bg-[#c6ff00] text-black font-black uppercase text-sm tracking-widest rounded-none hover:bg-white transition-all duration-300 shadow-xl shadow-[#c6ff00]/20 active:scale-95">
-              REGISTER NOW
-            </button>
-            <button className="px-10 py-4 bg-black/60 border border-[#c6ff00] text-[#c6ff00] font-black uppercase text-sm tracking-widest rounded-none hover:bg-[#c6ff00] hover:text-black transition-all duration-300 backdrop-blur-md active:scale-95">
-              BECOME A SPONSOR
-            </button>
+          <a 
+            href="https://www.ticket360.co.in/event-details?event=NzAwfF58"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-10 py-4 bg-[#c6ff00] text-black font-black uppercase text-sm tracking-widest rounded-none hover:bg-white transition-all duration-300 shadow-xl shadow-[#c6ff00]/20 active:scale-95 inline-block text-center"
+          >
+            REGISTER NOW
+          </a>
+           
           </div>
         </div>
 
@@ -90,7 +93,7 @@ const Hero: React.FC = () => {
                     <MapPin size={18} strokeWidth={3} />
                   </div>
                   <span className="text-[11px] font-bold uppercase tracking-wide leading-tight">
-                    RPM SCHOOL, MULLAI NAGAR, VADAVALLI | COIMBATORE - 641041
+                    ADISSIA VIVAANA, PONGALIYUR | COIMBATORE - 641041
                   </span>
                 </div>
               </div>

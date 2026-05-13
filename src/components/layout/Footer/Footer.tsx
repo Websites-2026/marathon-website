@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, MapPin, Phone, ArrowUpRight } from 'lucide-react';
-import { FaInstagram, FaFacebook, FaLinkedin } from 'react-icons/fa';
+import { FaInstagram, FaYoutube } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -21,9 +21,18 @@ const Footer: React.FC = () => {
               Empowering athletes with determination and inclusion. Beyond Heights is more than a marathon; it's a movement towards human capability.
             </p>
             <div className="flex gap-4">
-              {[FaInstagram, FaFacebook, FaLinkedin].map((Icon, i) => (
-                <a key={i} href="#" className="w-11 h-11 rounded-full bg-neutral-900/50 border border-neutral-800 flex items-center justify-center hover:bg-[#c6ff00] hover:text-black hover:border-[#c6ff00] transition-all duration-300 group">
-                  <Icon size={18} className="group-hover:scale-110 transition-transform" />
+              {[
+                { Icon: FaInstagram, href: 'https://www.instagram.com/beyond_heights_rezilyens?igsh=OHZiazRlYW85dnV3' },
+                { Icon: FaYoutube, href: 'https://youtube.com/@beyond-heightsrezilyens?si=YW-aZnJwr5up-Mex' },
+              ].map((social, i) => (
+                <a 
+                  key={i} 
+                  href={social.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-11 h-11 rounded-full bg-neutral-900/50 border border-neutral-800 flex items-center justify-center hover:bg-[#c6ff00] hover:text-black hover:border-[#c6ff00] transition-all duration-300 group"
+                >
+                  <social.Icon size={18} className="group-hover:scale-110 transition-transform" />
                 </a>
               ))}
             </div>
@@ -33,10 +42,20 @@ const Footer: React.FC = () => {
           <div className="space-y-10">
             <h3 className="text-[#c6ff00] text-[11px] font-black uppercase tracking-[0.3em]">Quick Links</h3>
             <ul className="space-y-5">
-              {['Home Page', 'About Us', 'Our Events', 'Contact Us'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-neutral-400 hover:text-white transition-all flex items-center group">
-                    <span className="text-[12px] font-bold uppercase tracking-widest">{item}</span>
+              {[
+                { name: 'Home Page', href: '#' },
+                { name: 'About Us', href: '#' },
+                { name: 'Our Events', href: 'https://www.ticket360.co.in/event-details?event=NzAwfF58' },
+                { name: 'Contact Us', href: '#' }
+              ].map((item) => (
+                <li key={item.name}>
+                  <a 
+                    href={item.href} 
+                    target={item.href.startsWith('http') ? "_blank" : undefined}
+                    rel={item.href.startsWith('http') ? "noopener noreferrer" : undefined}
+                    className="text-neutral-400 hover:text-white transition-all flex items-center group"
+                  >
+                    <span className="text-[12px] font-bold uppercase tracking-widest">{item.name}</span>
                     <ArrowUpRight size={14} className="ml-2 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all text-[#c6ff00]" />
                   </a>
                 </li>
@@ -58,13 +77,13 @@ const Footer: React.FC = () => {
                 <div className="w-10 h-10 rounded-lg bg-neutral-900 flex items-center justify-center shrink-0 group-hover:bg-[#c6ff00]/10 transition-colors">
                   <Phone className="text-[#c6ff00]" size={18} />
                 </div>
-                <span className="text-[13px] text-neutral-400 font-bold">+1 (555) 123-4567</span>
+                <span className="text-[13px] text-neutral-400 font-bold">+91 95971 95741</span>
               </li>
               <li className="flex items-center gap-4 group">
                 <div className="w-10 h-10 rounded-lg bg-neutral-900 flex items-center justify-center shrink-0 group-hover:bg-[#c6ff00]/10 transition-colors">
                   <Mail className="text-[#c6ff00]" size={18} />
                 </div>
-                <span className="text-[13px] text-neutral-400 font-bold">hello@beyondheights.com</span>
+                <span className="text-[13px] text-neutral-400 font-bold">beyondheights.com@gmail.com</span>
               </li>
             </ul>
           </div>

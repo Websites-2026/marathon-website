@@ -11,7 +11,7 @@ const SubHeader: React.FC = () => {
         </div>
         <div className="flex items-center gap-2">
           <MapPin size={16} strokeWidth={2.5} />
-          <span>RPM School, Mullai Nagar, Vadavalli | Coimbatore - 641041</span>
+          <span>ADISSIA VIVAANA, PONGALIYUR | COIMBATORE - 641041</span>
         </div>
       </div>
     </div>

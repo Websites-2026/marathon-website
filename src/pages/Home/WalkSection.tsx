@@ -111,12 +111,17 @@ const WalkSection: React.FC = () => {
                     </div>
                   </div>
 
-                  <button className={`px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.15em] transition-all duration-300 flex items-center gap-2 group-hover:translate-x-1 ${
+                  <a 
+                    href="https://www.ticket360.co.in/event-details?event=NzAwfF58"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.15em] transition-all duration-300 flex items-center gap-2 group-hover:translate-x-1 ${
                     event.theme === 'lime' ? 'bg-white text-black hover:bg-black hover:text-white' : 'bg-[#c6ff00] text-black hover:bg-black hover:text-white'
-                  }`}>
+                  }`}
+                  >
                     LEARN MORE
                     <ArrowRight size={12} strokeWidth={3} />
-                  </button>
+                  </a>
                 </div>
 
               </div>
