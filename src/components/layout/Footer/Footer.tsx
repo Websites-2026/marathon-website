@@ -1,0 +1,114 @@
+import React from 'react';
+import { Mail, MapPin, Phone, ArrowUpRight } from 'lucide-react';
+import { FaInstagram, FaFacebook, FaLinkedin } from 'react-icons/fa';
+
+const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-[#0A0A0A] text-white pt-24 pb-12 px-6 md:px-10 border-t border-neutral-900">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-24">
+          
+          {/* Branding Column */}
+          <div className="space-y-8">
+            <img 
+              src="https://ryzfriykqluohxvulezu.supabase.co/storage/v1/object/public/marathon%20website/hero%20Section/Beyond%20Heights%20Logo-01.svg" 
+              alt="Beyond Heights" 
+              className="h-12 w-auto object-contain"
+            />
+            <p className="text-neutral-500 text-[13px] font-medium leading-relaxed max-w-xs">
+              Empowering athletes with determination and inclusion. Beyond Heights is more than a marathon; it's a movement towards human capability.
+            </p>
+            <div className="flex gap-4">
+              {[FaInstagram, FaFacebook, FaLinkedin].map((Icon, i) => (
+                <a key={i} href="#" className="w-11 h-11 rounded-full bg-neutral-900/50 border border-neutral-800 flex items-center justify-center hover:bg-[#c6ff00] hover:text-black hover:border-[#c6ff00] transition-all duration-300 group">
+                  <Icon size={18} className="group-hover:scale-110 transition-transform" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick Links Column */}
+          <div className="space-y-10">
+            <h3 className="text-[#c6ff00] text-[11px] font-black uppercase tracking-[0.3em]">Quick Links</h3>
+            <ul className="space-y-5">
+              {['Home Page', 'About Us', 'Our Events', 'Contact Us'].map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-neutral-400 hover:text-white transition-all flex items-center group">
+                    <span className="text-[12px] font-bold uppercase tracking-widest">{item}</span>
+                    <ArrowUpRight size={14} className="ml-2 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all text-[#c6ff00]" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Column */}
+          <div className="space-y-10">
+            <h3 className="text-[#c6ff00] text-[11px] font-black uppercase tracking-[0.3em]">Get in Touch</h3>
+            <ul className="space-y-8">
+              <li className="flex items-start gap-4 group">
+                <div className="w-10 h-10 rounded-lg bg-neutral-900 flex items-center justify-center shrink-0 group-hover:bg-[#c6ff00]/10 transition-colors">
+                  <MapPin className="text-[#c6ff00]" size={18} />
+                </div>
+                <span className="text-[13px] text-neutral-400 leading-relaxed font-bold pt-1">123 Marathon Avenue, Suite 100, Fitness City, FC 54321</span>
+              </li>
+              <li className="flex items-center gap-4 group">
+                <div className="w-10 h-10 rounded-lg bg-neutral-900 flex items-center justify-center shrink-0 group-hover:bg-[#c6ff00]/10 transition-colors">
+                  <Phone className="text-[#c6ff00]" size={18} />
+                </div>
+                <span className="text-[13px] text-neutral-400 font-bold">+1 (555) 123-4567</span>
+              </li>
+              <li className="flex items-center gap-4 group">
+                <div className="w-10 h-10 rounded-lg bg-neutral-900 flex items-center justify-center shrink-0 group-hover:bg-[#c6ff00]/10 transition-colors">
+                  <Mail className="text-[#c6ff00]" size={18} />
+                </div>
+                <span className="text-[13px] text-neutral-400 font-bold">hello@beyondheights.com</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Newsletter Column */}
+          <div className="space-y-10">
+            <h3 className="text-[#c6ff00] text-[11px] font-black uppercase tracking-[0.3em]">Newsletter</h3>
+            <div className="space-y-6">
+              <p className="text-neutral-500 text-[12px] font-bold uppercase tracking-tighter leading-snug">
+                Stay updated with our latest news and athletic community events.
+              </p>
+              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                <div className="relative">
+                  <input 
+                    type="email" 
+                    placeholder="YOUR EMAIL" 
+                    className="w-full bg-neutral-900 border border-neutral-800 rounded-sm px-5 py-4 text-[10px] font-black tracking-widest focus:ring-1 focus:ring-[#c6ff00] focus:border-[#c6ff00] transition-all outline-none"
+                  />
+                </div>
+                <button className="w-full bg-[#c6ff00] text-black py-4 rounded-sm text-[10px] font-black uppercase tracking-[0.25em] hover:bg-white transition-all duration-300 transform active:scale-[0.98] shadow-lg shadow-[#c6ff00]/10">
+                  Subscribe Now
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="mt-24 pt-10 border-t border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-8">
+          <p className="text-neutral-600 text-[9px] font-black uppercase tracking-[0.3em]">
+            &copy; {currentYear} BEYOND HEIGHTS. ALL RIGHTS RESERVED.
+          </p>
+          <div className="flex gap-10">
+            {['Privacy Policy', 'Terms of Service'].map((item) => (
+              <a key={item} href="#" className="text-neutral-600 hover:text-[#c6ff00] text-[9px] font-black uppercase tracking-[0.3em] transition-colors relative group">
+                {item}
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#c6ff00] group-hover:w-full transition-all duration-300" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
